@@ -197,11 +197,14 @@ Install gcc, make, and cmake.
     # generate executables
     add_executable(calcpi ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
+    # ramanujan depends on factorial
+    target_link_libraries(ramanujan factorial)
+
     # link libraries
-    target_link_libraries(calcpi viete ramanujan gregory factorial)
+    target_link_libraries(calcpi viete ramanujan gregory)
     ```
 1. `cd build`
-1. `cmake ..`
+1. `cmake -G "Unix Makefiles" ..`
 1. `make`
 1. Run `./calcpi`
 

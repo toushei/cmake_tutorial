@@ -25,5 +25,8 @@ add_library(factorial STATIC ${CMAKE_CURRENT_SOURCE_DIR}/src/factorial.cpp)
 # generate executables
 add_executable(calcpi ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
+# ramanujan depends on factorial
+target_link_libraries(ramanujan factorial)
+
 # link libraries
-target_link_libraries(calcpi viete ramanujan gregory factorial)
+target_link_libraries(calcpi viete ramanujan gregory)
